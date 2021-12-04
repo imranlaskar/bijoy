@@ -1,0 +1,21 @@
+import 'package:bijoy/model/bir_uttom_model.dart';
+
+class BirUttomReop {
+  List<BirUttomModel> getAllBirUttomList = [
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/bn/thumb/1/16/%E0%A6%AE%E0%A7%8B%E0%A6%B9%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A6%A6_%E0%A6%86%E0%A6%AC%E0%A6%A6%E0%A7%81%E0%A6%B0_%E0%A6%B0%E0%A6%AC.jpg/220px-%E0%A6%AE%E0%A7%8B%E0%A6%B9%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AE%E0%A6%A6_%E0%A6%86%E0%A6%AC%E0%A6%A6%E0%A7%81%E0%A6%B0_%E0%A6%B0%E0%A6%AC.jpg", "আবদুর রব", "--", "মেজর জেনারেল", "০৮"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png", "কাজী মুহাম্মদ সফিউল্লাহ", "অধিনায়ক, এস. ফোর্স", "মেজর জেনারেল", "০৯"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Ziaur_Rahman_1979.jpg/195px-Ziaur_Rahman_1979.jpg", "জিয়াউর রহমান", "অধিনায়ক, জেড. ফোর্স", "লে. জেনারেল", "১০"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/bn/thumb/4/44/%E0%A6%9A%E0%A6%BF%E0%A6%A4%E0%A7%8D%E0%A6%A4_%E0%A6%B0%E0%A6%9E%E0%A7%8D%E0%A6%9C%E0%A6%A8_%E0%A6%A6%E0%A6%A4%E0%A7%8D%E0%A6%A4.jpg/220px-%E0%A6%9A%E0%A6%BF%E0%A6%A4%E0%A7%8D%E0%A6%A4_%E0%A6%B0%E0%A6%9E%E0%A7%8D%E0%A6%9C%E0%A6%A8_%E0%A6%A6%E0%A6%A4%E0%A7%8D%E0%A6%A4.jpg", "চিত্ত রঞ্জন দত্ত", "সেক্টর অধিনায়ক-৪", "মেজর জেনারেল", "১১ "),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png", "কাজী নূরুজ্জামান", "সেক্টর অধিনায়ক-৭", "লে. কর্ণেল", "১২"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png", "মীর শওকত আলী", "সেক্টর অধিনায়ক-৫", "লে. জেনারেল", "১৩"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/bn/9/93/%E0%A6%96%E0%A6%BE%E0%A6%B2%E0%A7%87%E0%A6%A6_%E0%A6%AE%E0%A7%8B%E0%A6%B6%E0%A6%BE%E0%A6%B0%E0%A6%B0%E0%A6%AB.jpg", "খালেদ মোশাররফ", "অধিনায়ক, কে. ফোর্স", "ব্রিগেডিয়ার", "১৪"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png", "মোহাম্মদ আবুল মঞ্জুর", "সেক্টর অধিনায়ক-৮", "মেজর জেনারেল", "১৫"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/5/5b/Abu_Taher.jpg", "মোহাম্মদ আবু তাহের", "সেক্টর অধিনায়ক-১১", "লে. কর্ণেল", "১৬"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/bn/5/55/%E0%A6%8F.%E0%A6%8F%E0%A6%A8.%E0%A6%8F%E0%A6%AE._%E0%A6%A8%E0%A7%82%E0%A6%B0%E0%A7%81%E0%A6%9C%E0%A7%8D%E0%A6%9C%E0%A6%BE%E0%A6%AE%E0%A6%BE%E0%A6%A8.jpg", "এ. এন. এম. নূরুজ্জামান", "সেক্টর অধিনায়ক-৩", "লে. কর্ণেল", "১৭"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png", "মোহাম্মদ রফিকুল ইসলাম", "সেক্টর অধিনায়ক-১", "মেজর", "১৮"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/bn/a/aa/%E0%A6%86%E0%A6%AC%E0%A6%A6%E0%A7%81%E0%A6%B8_%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A7%87%E0%A6%95_%E0%A6%9A%E0%A7%8C%E0%A6%A7%E0%A7%81%E0%A6%B0%E0%A7%80.jpg", "আবদুস সালেক চৌধুরী", "সেক্টর অধিনায়ক-২", "মেজর", "১৯"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/bn/thumb/3/32/%E0%A6%8F_%E0%A6%9C%E0%A7%87_%E0%A6%8F%E0%A6%AE_%E0%A6%86%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A7%81%E0%A6%B2_%E0%A6%B9%E0%A6%95.jpg/220px-%E0%A6%8F_%E0%A6%9C%E0%A7%87_%E0%A6%8F%E0%A6%AE_%E0%A6%86%E0%A6%AE%E0%A6%BF%E0%A6%A8%E0%A7%81%E0%A6%B2_%E0%A6%B9%E0%A6%95.jpg", "এ জে এম আমিনুল হক", "অধিনায়ক, ৮ ইস্ট বেঙ্গল", "ব্রিগেডিয়ার", "২০"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/bn/thumb/9/99/%E0%A6%96%E0%A6%BE%E0%A6%9C%E0%A6%BE_%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A6%BE%E0%A6%AE_%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%A6%E0%A6%BF%E0%A6%A8_%E0%A6%AD%E0%A7%82%E0%A6%81%E0%A6%87%E0%A6%AF%E0%A6%BC%E0%A6%BE.jpg/220px-%E0%A6%96%E0%A6%BE%E0%A6%9C%E0%A6%BE_%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A6%BE%E0%A6%AE_%E0%A6%89%E0%A6%A6%E0%A7%8D%E0%A6%A6%E0%A6%BF%E0%A6%A8_%E0%A6%AD%E0%A7%82%E0%A6%81%E0%A6%87%E0%A6%AF%E0%A6%BC%E0%A6%BE.jpg", "খাজা নিজাম উদ্দিন ভূঁইয়া", "সেক্টর-৪", "লিডার গণবাহিনী", "২১"),
+    BirUttomModel("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png", "হারুন আহমেদ চৌধুরী", "সেক্টর-১ ", "মেজর জেনারেল", "২২"),
+  ];
+}
