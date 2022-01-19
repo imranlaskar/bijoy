@@ -18,17 +18,73 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
       ),
       body: Column(
         children: [
-          Container(
-            child: ListView.builder(
-              itemCount: bangoBondhuHome.length,
-                itemBuilder: (context, i){
-                return Container(
-                  child: Text(bangoBondhuHome[i])
-                );
+          SizedBox(height: 15,),
+          Padding(
+            padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
+            child: InkWell(
+              onTap: (){
 
-                }
+              },
+              child: Container(
+                  color: allColors.appColor,
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: Text("bangoBondhuHome[i]",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 27,
+                        fontWeight: FontWeight.bold
+                    ),
+                  )
+              ),
             ),
           ),
+          SizedBox(height: 10,),
+          Padding(
+            padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
+            child: InkWell(
+              onTap: (){
+
+              },
+              child: Container(
+                  color: allColors.appColor,
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: Text("bangoBondhuHome[i]",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 27,
+                        fontWeight: FontWeight.bold
+                    ),
+                  )
+              ),
+            ),
+          ),
+          SizedBox(height: 10,),
+          Padding(
+            padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
+            child: InkWell(
+              onTap: (){
+
+              },
+              child: Container(
+                  color: allColors.appColor,
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: Text("bangoBondhuHome[i]",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 27,
+                        fontWeight: FontWeight.bold
+                    ),
+                  )
+              ),
+            ),
+          ),
+          SizedBox(height: 10,),
         ],
       ),
     );

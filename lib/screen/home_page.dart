@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                         child: SizedBox(
                           height: buttonHeight,
                           child: ElevatedButton(
-                            child: Text("কর্ণার",
+                            child: Text("বঙ্গবন্ধু কর্ণার",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: buttonFontSize,
