@@ -1,3 +1,5 @@
+import 'package:bijoy/screen/bangobandhu_cornar/screen/bangobandhu_jiboni.dart';
+import 'package:bijoy/screen/bangobandhu_cornar/screen/photo_gallary.dart';
 import 'package:bijoy/utill/color.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,7 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: allColors.appColor,
-        title: Text(""),
+        title: Text("বঙ্গবন্ধু কর্ণার"),
       ),
       body: Column(
         children: [
@@ -23,14 +25,18 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
             padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
             child: InkWell(
               onTap: (){
-
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>BangoBandhuJiboni()));
               },
               child: Container(
+                decoration: BoxDecoration(
                   color: allColors.appColor,
+                  borderRadius: BorderRadius.circular(15)
+                ),
                   alignment: Alignment.center,
                   height: 50,
                   width: MediaQuery.of(context).size.width,
-                  child: Text("bangoBondhuHome[i]",
+                  child: Text("বঙ্গবন্ধুর জীবনী",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 27,
@@ -45,14 +51,15 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
             padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
             child: InkWell(
               onTap: (){
-
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>BongoPhotoGallery()));
               },
               child: Container(
                   color: allColors.appColor,
                   alignment: Alignment.center,
                   height: 50,
                   width: MediaQuery.of(context).size.width,
-                  child: Text("bangoBondhuHome[i]",
+                  child: Text("ফটোগ্যালারী",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 27,
@@ -90,6 +97,7 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
     );
   }
 }
+
 List <String> bangoBondhuHome = [
   "jdhf",
   "fdgt",
