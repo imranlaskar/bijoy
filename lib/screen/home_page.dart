@@ -1,5 +1,6 @@
 import 'package:bijoy/helper/manu_widget.dart';
 import 'package:bijoy/screen/about_us.dart';
+import 'package:bijoy/screen/bangobandhu_cornar/bangobandhu_cornar.dart';
 import 'package:bijoy/screen/honors/honors_home.dart';
 import 'package:bijoy/screen/independant/independent_war.dart';
 import 'package:bijoy/screen/photo_gallery/photo_gallery.dart';
@@ -71,163 +72,191 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          sliderMain:
-          Column(
-            children: [
-              CarouselSlider(
-                options: CarouselOptions(
-                  autoPlay: true,
-                ),
-                items: sliderImage
-                    .map((item) => Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Container(
-                    height: height/4.5,
-                    width: width/1.2,
-                    child: Image.asset(item,
-                      fit: BoxFit.cover,
-                    ),
+          sliderMain: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
                   ),
-                ))
-                    .toList(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: SizedBox(
-                        height: buttonHeight,
-                        child: ElevatedButton(
-                          child: Text("মুক্তিযুদ্ধ কর্ণার",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: buttonFontSize,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)
-                              )
-                          ),
-                          onPressed: (){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>IndependantWar()));
-                          },
-                        ),
+                  items: sliderImage
+                      .map((item) => Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Container(
+                      height: height/4.5,
+                      width: width/1.2,
+                      child: Image.asset(item,
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(height: 10,),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: SizedBox(
-                        height: buttonHeight,
-                        child: ElevatedButton(
-                          child: Text("বিজয় দিবস",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: buttonFontSize,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)
-                              )
-                          ),
-                          onPressed: (){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>VactoryHome()));
-                          },
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: SizedBox(
-                        height: buttonHeight,
-                        child: ElevatedButton(
-                          child: Text("সম্মাননা",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: buttonFontSize,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)
-                              )
-                          ),
-                          onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder:
-                            (context)=>HonorsHomePage()));
-                          },
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: SizedBox(
-                        height: buttonHeight,
-                        child: ElevatedButton(
-                          child: Text("ফটোগ্যালারী",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: buttonFontSize,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)
-                              )
-                          ),
-                          onPressed: (){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>PhotoGallery()));
-                          },
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: SizedBox(
-                        height: buttonHeight,
-                        child: ElevatedButton(
-                          child: Text("কুইজ",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: buttonFontSize,
-                                fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)
-                              )
-                          ),
-                          onPressed: (){
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>QuizStartPage()));
-                            },
-                        ),
-                      ),
-                    ),
-                  ],
+                  ))
+                      .toList(),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          height: buttonHeight,
+                          child: ElevatedButton(
+                            child: Text("মুক্তিযুদ্ধ কর্ণার",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: buttonFontSize,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)
+                                )
+                            ),
+                            onPressed: (){
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context)=>IndependantWar()));
+                            },
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          height: buttonHeight,
+                          child: ElevatedButton(
+                            child: Text("কর্ণার",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: buttonFontSize,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)
+                                )
+                            ),
+                            onPressed: (){
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context)=>BangobandhuCornar()));
+                            },
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          height: buttonHeight,
+                          child: ElevatedButton(
+                            child: Text("বিজয় দিবস",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: buttonFontSize,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)
+                                )
+                            ),
+                            onPressed: (){
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context)=>VactoryHome()));
+                            },
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          height: buttonHeight,
+                          child: ElevatedButton(
+                            child: Text("সম্মাননা",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: buttonFontSize,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)
+                                )
+                            ),
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder:
+                              (context)=>HonorsHomePage()));
+                            },
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          height: buttonHeight,
+                          child: ElevatedButton(
+                            child: Text("ফটোগ্যালারী",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: buttonFontSize,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)
+                                )
+                            ),
+                            onPressed: (){
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context)=>PhotoGallery()));
+                            },
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          height: buttonHeight,
+                          child: ElevatedButton(
+                            child: Text("কুইজ",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: buttonFontSize,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)
+                                )
+                            ),
+                            onPressed: (){
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context)=>QuizStartPage()));
+                              },
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           )
       ),
     );

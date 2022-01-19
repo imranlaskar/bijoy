@@ -18,7 +18,8 @@ class _PhotoGalleryState extends State<PhotoGallery> {
           preferredSize: Size.fromHeight(60),
           child: CustomAppBar(titile: 'আন্তর্জাতিক প্রতিক্রিয়া')
       ),
-      body: Container(
+      body:
+      Container(
         child: GridView.count(
             crossAxisCount: 3,
         childAspectRatio: 1,
