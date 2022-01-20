@@ -16,25 +16,25 @@ class _PhotoGalleryState extends State<PhotoGallery> {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(60),
-          child: CustomAppBar(titile: 'আন্তর্জাতিক প্রতিক্রিয়া')
+          child: CustomAppBar(titile: "ফটোগ্যালারী")
       ),
       body:
       Container(
         child: GridView.count(
             crossAxisCount: 3,
         childAspectRatio: 1,
-        children: oldimageList.map((item){
+        children: oldimageList.asMap().keys.toList().map((index){
           return Padding(
             padding: const EdgeInsets.all(4.0),
             child: InkWell(
               child: Container(
                 height: containerHeight,
                   width: containerWidth,
-                  child: Image.asset(item,fit: BoxFit.cover,)),
+                  child: Image.asset(oldimageList[index],fit: BoxFit.cover,)),
               onTap: (){
                 setState(() {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=>LargeImage(largeImage: item)));
+                      MaterialPageRoute(builder: (context)=>LargeImage(largeImage: oldimageList, index: index,)));
                 });
               },
             ),

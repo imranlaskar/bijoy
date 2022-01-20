@@ -1,4 +1,5 @@
 import 'package:bijoy/screen/bangobandhu_cornar/screen/Bongobandhu_LargeImage.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 class BongoPhotoGallery extends StatefulWidget {
@@ -7,30 +8,67 @@ class BongoPhotoGallery extends StatefulWidget {
   @override
   _BongoPhotoGalleryState createState() => _BongoPhotoGalleryState();
 }
-
+List<String> _url=[];
 class _BongoPhotoGalleryState extends State<BongoPhotoGallery> {
+
+  Future getImage()async{
+    final ref= FirebaseStorage.instance.ref()
+        .child("bongobandhu_image/").list();
+
+    ref.then((value) {
+      value.items.forEach((element)async {
+        String url= await element.getDownloadURL();
+         _url.add(url);
+         setState(() {
+           _url;
+         });
+        print(url);
+        print('suha');
+        print(element);
+      });
+     // _url.add(value.items![0].fullPath);
+
+     // print('suha');
+
+    });
+
+   // _url=await ref.getDownloadURL();
+  }
+  @override
+  void initState() {
+    super.initState();
+    getImage();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body:
+      // Container(
+      //     height: 200,
+      //     width: 200,
+      //     child: Image.network(_url[0]))
+       Container(
         child: GridView.count(
           crossAxisCount: 3,
           childAspectRatio: 1,
-          children: imageList.map((item){
+          children: _url.asMap().keys.toList().map((index){
             return Padding(
-              padding: const EdgeInsets.all(4.0),
+              padding: const EdgeInsets.all(5.0),
               child: InkWell(
                 child: Container(
                     height: containerHeight,
                     width: containerWidth,
-                    child: Image.asset(item,fit: BoxFit.cover,)),
+                    child: AnimatedContainer(
+                      height: 90,
+                        width: 90,
+                        duration: Duration(milliseconds: 1000),
+                        child: Image.network(_url[index],fit: BoxFit.cover,))),
                 onTap: (){
-                  setState(() {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context)=>BangoBandhuLargeImagePage(
-                            largeImageList: item
+                            largeImageList: _url, index: index,
                         )));
-                  });
                 },
               ),
             );

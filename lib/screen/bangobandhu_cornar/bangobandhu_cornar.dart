@@ -22,7 +22,7 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
         children: [
           SizedBox(height: 15,),
           Padding(
-            padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
+            padding: const EdgeInsets.only(left: 28.0,right: 28,),
             child: InkWell(
               onTap: (){
                 Navigator.push(context,
@@ -31,7 +31,7 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
               child: Container(
                 decoration: BoxDecoration(
                   color: allColors.appColor,
-                  borderRadius: BorderRadius.circular(15)
+                  borderRadius: BorderRadius.circular(5)
                 ),
                   alignment: Alignment.center,
                   height: 50,
@@ -39,30 +39,33 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
                   child: Text("বঙ্গবন্ধুর জীবনী",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 27,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold
                     ),
                   )
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 15,),
           Padding(
-            padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
+            padding: const EdgeInsets.only(left: 28.0,right: 28,),
             child: InkWell(
               onTap: (){
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context)=>BongoPhotoGallery()));
               },
               child: Container(
-                  color: allColors.appColor,
+                  decoration: BoxDecoration(
+                      color: allColors.appColor,
+                      borderRadius: BorderRadius.circular(5)
+                  ),
                   alignment: Alignment.center,
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: Text("ফটোগ্যালারী",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 27,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold
                     ),
                   )
@@ -70,27 +73,7 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
             ),
           ),
           SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.only(left: 28.0,right: 28,top: 10),
-            child: InkWell(
-              onTap: (){
 
-              },
-              child: Container(
-                  color: allColors.appColor,
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: MediaQuery.of(context).size.width,
-                  child: Text("bangoBondhuHome[i]",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 27,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-              ),
-            ),
-          ),
           SizedBox(height: 10,),
         ],
       ),

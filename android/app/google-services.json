@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "207010627185",
+    "project_id": "bijoy-c0b1b",
+    "storage_bucket": "bijoy-c0b1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207010627185:android:a9c86540a4c65765b165d0",
+        "android_client_info": {
+          "package_name": "com.example.bijoy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207010627185-8laokj1mhaf5r46494euna7cb3td6meo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY5MGJgKKVtba8q4RczNsIcgwjtZ4y0lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207010627185-8laokj1mhaf5r46494euna7cb3td6meo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
