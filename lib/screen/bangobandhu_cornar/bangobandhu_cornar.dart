@@ -1,4 +1,5 @@
 import 'package:bijoy/screen/bangobandhu_cornar/screen/bangobandhu_jiboni.dart';
+import 'package:bijoy/screen/bangobandhu_cornar/screen/book.dart';
 import 'package:bijoy/screen/bangobandhu_cornar/screen/photo_gallary.dart';
 import 'package:bijoy/utill/color.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,19 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
         children: [
           SizedBox(height: 15,),
           Padding(
+            padding: const EdgeInsets.only(left: 28.0,right: 28),
+            child: Center(
+              child: Text("যতদিন রবে পদ্মা-মেঘনা-গৌরী-যমুনা বহমান, ততদিন রবে কীর্তি তোমার শেখ মুজিবুর রহমান।",
+                style: TextStyle(
+                  fontStyle: FontStyle.italic,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red
+                ),),
+            ),
+          ),
+          SizedBox(height: 15,),
+          Padding(
             padding: const EdgeInsets.only(left: 28.0,right: 28,),
             child: InkWell(
               onTap: (){
@@ -31,12 +45,38 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
               child: Container(
                 decoration: BoxDecoration(
                   color: allColors.appColor,
-                  borderRadius: BorderRadius.circular(5)
+                  borderRadius: BorderRadius.circular(5),
                 ),
                   alignment: Alignment.center,
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: Text("বঙ্গবন্ধুর জীবনী",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold
+                    ),
+                  )
+              ),
+            ),
+          ),
+          SizedBox(height: 15,),
+          Padding(
+            padding: const EdgeInsets.only(left: 28.0,right: 28,),
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>BookPage()));
+              },
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: allColors.appColor,
+                      borderRadius: BorderRadius.circular(5)
+                  ),
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: Text("রচিত গ্রন্থাবলি",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 22,
