@@ -39,7 +39,8 @@ class _PhotoGalleryState extends State<PhotoGallery> {
           preferredSize: Size.fromHeight(60),
           child: CustomAppBar(titile: "ফটোগ্যালারী",)
       ),
-      body:
+      body: _url.isEmpty? Center(
+          child: const CircularProgressIndicator()):
       Container(
         child: GridView.count(
             crossAxisCount: 3,

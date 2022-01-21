@@ -21,9 +21,9 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
       ),
       body: Column(
         children: [
-          SizedBox(height: 15,),
+          SizedBox(height: 25,),
           Padding(
-            padding: const EdgeInsets.only(left: 28.0,right: 28),
+            padding: const EdgeInsets.only(left: 38.0,right: 28),
             child: Center(
               child: Text("যতদিন রবে পদ্মা-মেঘনা-গৌরী-যমুনা বহমান, ততদিন রবে কীর্তি তোমার শেখ মুজিবুর রহমান।",
                 style: TextStyle(
@@ -34,7 +34,12 @@ class _BangobandhuCornarState extends State<BangobandhuCornar> {
                 ),),
             ),
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: 20,),
+          Container(
+            height: 240,
+              width: 200,
+              child: Image.asset("assets/image/mujib.jpg")),
+          SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.only(left: 28.0,right: 28,),
             child: InkWell(

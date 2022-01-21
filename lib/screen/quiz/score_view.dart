@@ -1,4 +1,5 @@
 import 'package:bijoy/screen/home_page.dart';
+import 'package:bijoy/screen/quiz/quiz_page.dart';
 import 'package:flutter/material.dart';
 
 class ScoreView extends StatefulWidget {
@@ -46,6 +47,7 @@ class _ScoreViewState extends State<ScoreView> {
               Navigator.push(context,
                   MaterialPageRoute(
                       builder: (context)=>HomePage()));
+              score=0;
             },
             child: Text("Go To Home Screen"
             )),

@@ -1,5 +1,6 @@
 import 'package:bijoy/helper/castom_appbar.dart';
 import 'package:bijoy/screen/honors/bir_uttom_details.dart';
+import 'package:bijoy/screen/honors/coming_soon.dart';
 import 'package:bijoy/screen/honors/honors.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,8 @@ class _HonorsHomePageState extends State<HonorsHomePage> {
                       style: ElevatedButton.styleFrom(
                           primary: Colors.teal),
                       onPressed: (){
-
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>ComingSoon()));
                       }, child: Text("বীর বিক্রম",
                     style: TextStyle(
                         fontSize: 20,
@@ -85,7 +87,8 @@ class _HonorsHomePageState extends State<HonorsHomePage> {
                       style: ElevatedButton.styleFrom(
                           primary: Colors.teal),
                       onPressed: (){
-
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>ComingSoon()));
                       }, child: Text("বীর প্রতীক",
                     style: TextStyle(
                         fontSize: 20,

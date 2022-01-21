@@ -48,7 +48,7 @@ class QuizProvider with ChangeNotifier {
   }
 
   nextButtonPress(context){
-    if(questionNumber<9)
+    if(questionNumber<QuizRepo().getQuestionModelList.length-1)
       questionNumber++;
     else
     {

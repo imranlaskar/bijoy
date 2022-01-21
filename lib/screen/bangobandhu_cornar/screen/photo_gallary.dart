@@ -34,11 +34,8 @@ class _BongoPhotoGalleryState extends State<BongoPhotoGallery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-      // Container(
-      //     height: 200,
-      //     width: 200,
-      //     child: Image.network(_url[0]))
+      body: _url.isEmpty ? Center(
+          child: const CircularProgressIndicator()):
        Container(
         child: GridView.count(
           crossAxisCount: 3,

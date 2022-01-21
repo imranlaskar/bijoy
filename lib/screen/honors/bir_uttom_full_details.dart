@@ -22,7 +22,7 @@ class _BirUttomFullDetailsState extends State<BirUttomFullDetails> {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(60),
-          child: CustomAppBar(titile: 'বীরশ্রেষ্ঠদের তালিকা')
+          child: CustomAppBar(titile: 'বীর উত্তমদের তালিকা')
       ),
       body: Center(
         child: Padding(
@@ -34,20 +34,23 @@ class _BirUttomFullDetailsState extends State<BirUttomFullDetails> {
                  width: 150,
                  child: Image.network(widget.image)),
              SizedBox(height: 25,),
-             Row(
-               mainAxisAlignment: MainAxisAlignment.center,
-               children: [
-                 Text("নাম : ",
-                   style: TextStyle(
-                     fontSize: 25,
-                   ),),
-                 Text(widget.name,
-                   style: TextStyle(
-                     fontSize: 25,
-                     fontWeight: FontWeight.bold,
-                     color: Colors.purple
-                   ),),
-               ],
+             SingleChildScrollView(
+               scrollDirection: Axis.horizontal,
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   Text("নাম : ",
+                     style: TextStyle(
+                       fontSize: 25,
+                     ),),
+                   Text(widget.name,
+                     style: TextStyle(
+                       fontSize: 25,
+                       fontWeight: FontWeight.bold,
+                       color: Colors.purple
+                     ),),
+                 ],
+               ),
              ),
               SizedBox(height: 15,),
              SingleChildScrollView(

@@ -1,4 +1,5 @@
 import 'package:bijoy/provider/quiz_provider.dart';
+import 'package:bijoy/utill/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,11 +11,7 @@ class QuizStart extends StatefulWidget {
   _QuizStartState createState() => _QuizStartState();
 }
 
-late bool ansVisibility;
-int questionNumber=0;
-int score=0;
-bool prevVisibility=false;
-late List<Color> optionColorList;
+
 class _QuizStartState extends State<QuizStart> {
 
   @override
@@ -50,11 +47,40 @@ class _QuizStartState extends State<QuizStart> {
                   children: [
                     Row(
                       children: [
-                        Text("Question ${questionNumber+1} out of ${quizProvider.questionModelList.length}",
-                          style: TextStyle(fontSize: 17),),
+                        Container(
+                          height: 40,
+                          width: 180,
+                          decoration: BoxDecoration(
+                            color: allColors.appColor,
+                              borderRadius: BorderRadius.all(Radius.circular(10)
+                              ),
+                          ),
+                          child: Center(
+                            child: Text("Question ${questionNumber+1} out of ${quizProvider.questionModelList.length}",
+                              style: TextStyle(
+                                  fontSize: 17,
+                                color: Colors.white
+                              ),
+                            ),
+                          ),
+                        ),
                         Spacer(),
-                        Text("Score: ${score}",
-                          style: TextStyle(fontSize: 17),),
+                        Container(
+                          height: 40,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            color: allColors.appColor,
+                            borderRadius: BorderRadius.all(Radius.circular(10)
+                            ),
+                          ),
+                          child: Center(
+                            child: Text("Score: ${score}",
+                              style: TextStyle(
+                                  fontSize: 17,
+                                color: Colors.white
+                              ),),
+                            ),
+                          ),
                       ],
                     ),
                     SizedBox(
@@ -62,9 +88,22 @@ class _QuizStartState extends State<QuizStart> {
                     ),
                     Column(
                       children: [
-                        Text("${questionNumber+1}. ${quizProvider.questionModelList[
-                        questionNumber].question}",
-                          style: TextStyle(fontSize: 24),),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)
+                            ),
+                            border: Border.all(
+                                width: 2,
+                                color: Colors.black
+                            )
+                        ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 18.0,top: 8,bottom: 8,right: 8),
+                            child: Text("${questionNumber+1}. ${quizProvider.questionModelList[
+                            questionNumber].question}",
+                              style: TextStyle(fontSize: 24),),
+                          ),
+                        ),
                         SizedBox(
                           height: 30,
                         ),
@@ -169,3 +208,9 @@ class _QuizStartState extends State<QuizStart> {
     );
   }
 }
+late bool ansVisibility;
+int questionNumber=0;
+int score=0;
+bool prevVisibility=false;
+late List<Color> optionColorList;
+AllColors allColors = AllColors();
