@@ -19,37 +19,38 @@ class _LargeImageState extends State<LargeImage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: Image.asset(widget.largeImage[widget.index]),
+              child: Image.network(widget.largeImage[widget.index]),
             ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Row(
-                children: [
-                  InkWell(
-                      onTap: (){
-                        setState(() {
-                          if(widget.index>0)
-                            widget.index--;
-                        });
-                      },
-                      child: Icon(Icons.arrow_back_ios,
-                        size: 30, color: Colors.white,
-                      )
-                  ),
-                  Spacer(),
-                  InkWell(
-                      onTap: (){
-                        setState(() {
-                          if(widget.largeImage.length-1>widget.index)
-                            widget.index++;
-                        });
-                      },
-                      child: Icon(Icons.arrow_forward_ios,
-                        size: 30, color: Colors.white,
-                      )
-                  )
-                ],
-              ),
+          ],
+        ),
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Row(
+          children: [
+            SizedBox(width: 30,),
+            InkWell(
+                onTap: (){
+                  setState(() {
+                    if(widget.index>0)
+                      widget.index--;
+                  });
+                },
+                child: Icon(Icons.arrow_back_ios,
+                  size: 30, color: Colors.white,
+                )
+            ),
+            Spacer(),
+            InkWell(
+                onTap: (){
+                  setState(() {
+                    if(widget.largeImage.length-1>widget.index)
+                      widget.index++;
+                  });
+                },
+                child: Icon(Icons.arrow_forward_ios,
+                  size: 30, color: Colors.white,
+                )
             )
           ],
         ),

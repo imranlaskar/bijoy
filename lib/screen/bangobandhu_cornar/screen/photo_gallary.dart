@@ -22,17 +22,8 @@ class _BongoPhotoGalleryState extends State<BongoPhotoGallery> {
          setState(() {
            _url;
          });
-        print(url);
-        print('suha');
-        print(element);
       });
-     // _url.add(value.items![0].fullPath);
-
-     // print('suha');
-
     });
-
-   // _url=await ref.getDownloadURL();
   }
   @override
   void initState() {

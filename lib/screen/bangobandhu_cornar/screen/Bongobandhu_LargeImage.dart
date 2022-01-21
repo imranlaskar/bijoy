@@ -26,8 +26,6 @@ class _BangoBandhuLargeImagePageState extends State<BangoBandhuLargeImagePage> {
               width: MediaQuery.of(context).size.width,
               child: Image.network(widget.largeImageList[widget.index]),
             ),
-
-
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:bijoy/helper/castom_appbar.dart';
 import 'package:bijoy/screen/photo_gallery/large_photo.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,30 +12,50 @@ class PhotoGallery extends StatefulWidget {
 }
 
 class _PhotoGalleryState extends State<PhotoGallery> {
+  Future getImage()async{
+    final ref= FirebaseStorage.instance.ref()
+        .child("mukti_image/").list();
+
+    ref.then((value) {
+      value.items.forEach((element)async {
+        String url= await element.getDownloadURL();
+        _url.add(url);
+        setState(() {
+          _url;
+        });
+      });
+    });
+  }
+  @override
+  void initState() {
+    super.initState();
+    getImage();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(60),
-          child: CustomAppBar(titile: "ফটোগ্যালারী")
+          child: CustomAppBar(titile: "ফটোগ্যালারী",)
       ),
       body:
       Container(
         child: GridView.count(
             crossAxisCount: 3,
         childAspectRatio: 1,
-        children: oldimageList.asMap().keys.toList().map((index){
+        children: _url.asMap().keys.toList().map((index){
           return Padding(
             padding: const EdgeInsets.all(4.0),
             child: InkWell(
               child: Container(
                 height: containerHeight,
                   width: containerWidth,
-                  child: Image.asset(oldimageList[index],fit: BoxFit.cover,)),
+                  child: Image.network(_url[index],fit: BoxFit.cover,)),
               onTap: (){
                 setState(() {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=>LargeImage(largeImage: oldimageList, index: index,)));
+                      MaterialPageRoute(builder: (context)=>LargeImage(largeImage: _url, index: index,)));
                 });
               },
             ),
@@ -46,219 +67,6 @@ class _PhotoGalleryState extends State<PhotoGallery> {
   }
 }
 
+List<String> _url=[];
 double containerHeight = 90;
 double containerWidth = 90;
-
-List<String> oldimageList = [
-  "assets/old_image/a1.jpg",
-  "assets/old_image/a2.jpg",
-  "assets/old_image/a3.jpg",
-  "assets/old_image/a4.jpg",
-  "assets/old_image/a5.jpg",
-  "assets/old_image/a6.jpg",
-  "assets/old_image/a7.jpg",
-  "assets/old_image/a8.jpg",
-  "assets/old_image/a9.jpg",
-  "assets/old_image/a11.jpg",
-  "assets/old_image/a12.jpg",
-  "assets/old_image/a13.jpg",
-  "assets/old_image/a14.jpg",
-  "assets/old_image/a15.jpg",
-  "assets/old_image/a16.jpg",
-  "assets/old_image/a17.jpg",
-  "assets/old_image/a18.jpg",
-  "assets/old_image/a19.jpg",
-  "assets/old_image/a20.jpg",
-  "assets/old_image/a21.jpg",
-  "assets/old_image/a22.jpg",
-  "assets/old_image/a23.jpg",
-  "assets/old_image/a24.jpg",
-  "assets/old_image/a25.jpg",
-  "assets/old_image/a26.jpg",
-  "assets/old_image/a27.jpg",
-  "assets/old_image/a28.jpg",
-  "assets/old_image/a29.jpg",
-  "assets/old_image/a30.jpg",
-  "assets/old_image/a31.jpg",
-  "assets/old_image/a32.jpg",
-  "assets/old_image/a33.jpg",
-  "assets/old_image/a34.jpg",
-  "assets/old_image/a35.jpg",
-  "assets/old_image/a36.jpg",
-  "assets/old_image/a37.jpg",
-  "assets/old_image/a38.jpg",
-  "assets/old_image/a39.jpg",
-  "assets/old_image/a40.jpg",
-  "assets/old_image/a41.jpg",
-  "assets/old_image/a42.jpg",
-  "assets/old_image/a43.jpg",
-  "assets/old_image/a44.jpg",
-  "assets/old_image/a45.jpg",
-  "assets/old_image/a46.jpg",
-  "assets/old_image/a47.jpg",
-  "assets/old_image/a48.jpg",
-  "assets/old_image/a49.jpg",
-  "assets/old_image/a50.jpg",
-  "assets/old_image/a51.jpg",
-  "assets/old_image/a52.jpg",
-  "assets/old_image/a53.jpg",
-  "assets/old_image/a54.jpg",
-  "assets/old_image/a55.jpg",
-  "assets/old_image/a56.jpg",
-  "assets/old_image/a57.jpg",
-  "assets/old_image/a58.jpg",
-  "assets/old_image/a59.jpg",
-  "assets/old_image/a60.jpg",
-  "assets/old_image/a61.jpg",
-  "assets/old_image/a62.jpg",
-  "assets/old_image/a63.jpg",
-  "assets/old_image/a64.jpg",
-  "assets/old_image/a65.jpg",
-  "assets/old_image/a66.jpg",
-  "assets/old_image/a67.jpg",
-  "assets/old_image/a68.jpg",
-  "assets/old_image/a69.jpg",
-  "assets/old_image/a70.jpg",
-  "assets/old_image/a71.jpg",
-  "assets/old_image/a72.jpg",
-  "assets/old_image/a73.jpg",
-  "assets/old_image/a74.jpg",
-  "assets/old_image/a75.jpg",
-  "assets/old_image/a76.jpg",
-  "assets/old_image/a77.jpg",
-  "assets/old_image/a78.jpg",
-  "assets/old_image/a79.jpg",
-  "assets/old_image/a80.jpg",
-  "assets/old_image/a81.jpg",
-  "assets/old_image/a82.jpg",
-  "assets/old_image/a83.jpg",
-  "assets/old_image/a84.jpg",
-  "assets/old_image/a85.jpg",
-  "assets/old_image/a86.jpg",
-  "assets/old_image/a87.jpg",
-  "assets/old_image/a88.jpg",
-  "assets/old_image/a89.jpg",
-  "assets/old_image/a90.jpg",
-  "assets/old_image/a91.jpg",
-  "assets/old_image/a92.jpg",
-  "assets/old_image/a93.jpg",
-  "assets/old_image/a94.jpg",
-  "assets/old_image/a95.jpg",
-  "assets/old_image/a96.jpg",
-  "assets/old_image/a97.jpg",
-  "assets/old_image/a98.jpg",
-  "assets/old_image/a99.jpg",
-  "assets/old_image/a100.jpg",
-  "assets/old_image/a101.jpg",
-  "assets/old_image/a102.jpg",
-  "assets/old_image/a103.jpg",
-  "assets/old_image/a104.jpg",
-  "assets/old_image/a105.jpg",
-  "assets/old_image/a106.jpg",
-  "assets/old_image/a107.jpg",
-  "assets/old_image/a108.jpg",
-  "assets/old_image/a109.jpg",
-  "assets/old_image/a110.jpg",
-  "assets/old_image/a111.jpg",
-  "assets/old_image/a112.jpg",
-  "assets/old_image/a113.jpg",
-  "assets/old_image/a114.jpg",
-  "assets/old_image/a115.jpg",
-  "assets/old_image/a116.jpg",
-  "assets/old_image/a117.jpg",
-  "assets/old_image/a118.jpg",
-  "assets/old_image/a119.jpg",
-  "assets/old_image/a120.jpg",
-  "assets/old_image/a121.jpg",
-  "assets/old_image/a122.jpg",
-  "assets/old_image/a123.jpg",
-  "assets/old_image/a124.jpg",
-  "assets/old_image/a125.jpg",
-  "assets/old_image/a126.jpg",
-  "assets/old_image/a127.jpg",
-  "assets/old_image/a128.jpg",
-  "assets/old_image/a129.jpg",
-  "assets/old_image/a130.jpg",
-  "assets/old_image/a131.jpg",
-  "assets/old_image/a132.jpg",
-  "assets/old_image/a133.jpg",
-  "assets/old_image/a134.jpg",
-  "assets/old_image/a135.jpg",
-  "assets/old_image/a136.jpg",
-  "assets/old_image/a137.jpg",
-  "assets/old_image/a138.jpg",
-  "assets/old_image/a139.jpg",
-  "assets/old_image/a140.jpg",
-  "assets/old_image/a141.jpg",
-  "assets/old_image/a142.jpg",
-  "assets/old_image/a143.jpg",
-  "assets/old_image/a144.jpg",
-  "assets/old_image/a145.jpg",
-  "assets/old_image/a146.jpg",
-  "assets/old_image/a147.jpg",
-  "assets/old_image/a148.jpg",
-  "assets/old_image/a149.jpg",
-  "assets/old_image/a150.jpg",
-  "assets/old_image/a151.jpg",
-  "assets/old_image/a152.jpg",
-  "assets/old_image/a153.jpg",
-  "assets/old_image/a154.jpg",
-  "assets/old_image/a155.jpg",
-  "assets/old_image/a156.jpg",
-  "assets/old_image/a157.jpg",
-  "assets/old_image/a158.jpg",
-  "assets/old_image/a159.jpg",
-  "assets/old_image/a160.jpg",
-  "assets/old_image/a161.jpg",
-  "assets/old_image/a162.jpg",
-  "assets/old_image/a163.jpg",
-  "assets/old_image/a164.jpg",
-  "assets/old_image/a165.jpg",
-  "assets/old_image/a166.jpg",
-  "assets/old_image/a167.jpg",
-  "assets/old_image/a168.jpg",
-  "assets/old_image/a169.jpg",
-  "assets/old_image/a170.jpg",
-  "assets/old_image/a171.jpg",
-  "assets/old_image/a172.jpg",
-  "assets/old_image/a173.jpg",
-  "assets/old_image/a174.jpg",
-  "assets/old_image/a175.jpg",
-  "assets/old_image/a176.jpg",
-  "assets/old_image/a177.jpg",
-  "assets/old_image/a178.jpg",
-  "assets/old_image/a179.jpg",
-  "assets/old_image/a180.jpg",
-  "assets/old_image/a181.jpg",
-  "assets/old_image/a182.jpg",
-  "assets/old_image/a183.jpg",
-  "assets/old_image/a184.jpg",
-  "assets/old_image/a185.jpg",
-  "assets/old_image/a186.jpg",
-  "assets/old_image/a187.jpg",
-  "assets/old_image/a188.jpg",
-  "assets/old_image/a189.jpg",
-  "assets/old_image/a190.jpg",
-  "assets/old_image/a191.jpg",
-  "assets/old_image/a192.jpg",
-  "assets/old_image/a193.jpg",
-  "assets/old_image/a194.jpg",
-  "assets/old_image/a195.jpg",
-  "assets/old_image/a196.jpg",
-  "assets/old_image/a197.jpg",
-  "assets/old_image/a198.jpg",
-  "assets/old_image/a199.jpg",
-  "assets/old_image/a200.jpg",
-  "assets/old_image/a201.jpg",
-  "assets/old_image/a202.jpg",
-  "assets/old_image/a203.jpg",
-  "assets/old_image/a204.jpg",
-  "assets/old_image/a205.jpg",
-  "assets/old_image/a206.jpg",
-  "assets/old_image/a207.jpg",
-  "assets/old_image/a208.jpg",
-  "assets/old_image/a209.jpg",
-  "assets/old_image/a210.jpg",
-  "assets/old_image/a211.jpg",
-  "assets/old_image/a212.jpg"
-];

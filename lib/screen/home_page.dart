@@ -274,12 +274,5 @@ final List<String> sliderImage = [
   "assets/image/5.jpg",
   "assets/image/6.jpg",
   "assets/image/7.png",
-  "assets/image/8.jpg",
-  "assets/bangobondhu/2.jpg",
-  "assets/bangobondhu/3.jpg",
-  "assets/bangobondhu/4.jpg",
-  "assets/bangobondhu/7.jpg",
-  "assets/bangobondhu/8.jpg",
-  "assets/bangobondhu/10.jpg",
-  "assets/bangobondhu/14.jpg"
+  "assets/image/8.jpg"
 ];
