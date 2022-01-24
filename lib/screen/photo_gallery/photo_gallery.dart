@@ -37,7 +37,7 @@ class _PhotoGalleryState extends State<PhotoGallery> {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(60),
-          child: CustomAppBar(titile: "ফটোগ্যালারী",)
+          child: CustomAppBar(titile: "যুদ্ধের দুষ্প্রাপ্য কিছু ফটো",)
       ),
       body: _url.isEmpty? Center(
           child: const CircularProgressIndicator()):

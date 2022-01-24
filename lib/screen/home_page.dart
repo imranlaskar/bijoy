@@ -1,6 +1,7 @@
 import 'package:bijoy/helper/manu_widget.dart';
 import 'package:bijoy/screen/about_us.dart';
 import 'package:bijoy/screen/bangobandhu_cornar/bangobandhu_cornar.dart';
+import 'package:bijoy/screen/honors/coming_soon.dart';
 import 'package:bijoy/screen/honors/honors_home.dart';
 import 'package:bijoy/screen/independant/independent_war.dart';
 import 'package:bijoy/screen/photo_gallery/photo_gallery.dart';
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
               _key.currentState!.closeDrawer();
               setState(() {
                 title = title;
-               if(title=="ABOUT US")
+               if(title=="ABOUT THIS APP")
                 {
                   Navigator.push(
                     context,
@@ -59,14 +60,14 @@ class _HomePageState extends State<HomePage> {
                  Navigator.push(
                    context,
                    MaterialPageRoute(builder:
-                       (context) => AboutUs()),
+                       (context) => ComingSoon(text: "Something is wrong, plese try again letter.......")),
                  );
                }else if(title=="More App")
                {
                  Navigator.push(
                    context,
                    MaterialPageRoute(builder:
-                       (context) => AboutUs()),
+                       (context) => ComingSoon(text: "There are no app available now!!")),
                  );
                }
               });

@@ -56,7 +56,7 @@ class MenuWidget extends StatelessWidget {
           Container(
             height: 2, width: MediaQuery.of(context).size.width,color: Colors.black,
           ),
-          sliderItem('ABOUT US', Icons.account_box_outlined),
+          sliderItem('ABOUT THIS APP', Icons.account_box_outlined),
           sliderItem('Rate this App', Icons.rate_review),
           sliderItem('More App', Icons.view_module_rounded),
         ],

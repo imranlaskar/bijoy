@@ -70,7 +70,7 @@ class _HonorsHomePageState extends State<HonorsHomePage> {
                           primary: Colors.teal),
                       onPressed: (){
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>ComingSoon()));
+                            MaterialPageRoute(builder: (context)=>ComingSoon(text: '"Comming Soon....."',)));
                       }, child: Text("বীর বিক্রম",
                     style: TextStyle(
                         fontSize: 20,
@@ -88,7 +88,7 @@ class _HonorsHomePageState extends State<HonorsHomePage> {
                           primary: Colors.teal),
                       onPressed: (){
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>ComingSoon()));
+                            MaterialPageRoute(builder: (context)=>ComingSoon(text: '"Comming Soon....."',)));
                       }, child: Text("বীর প্রতীক",
                     style: TextStyle(
                         fontSize: 20,
